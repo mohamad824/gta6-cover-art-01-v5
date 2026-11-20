@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PALMHEIST Cover Studio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="brand-mark">PALMHEIST</span> <span class="brand-sub">Cover Studio</span></div>
+  <div class="top-controls">
+    <label>Layout
+      <select id="layoutSel">
+        <option value="rush">Diagonal Rush</option>
+        <option value="stack">Sunset Stack</option>
+        <option value="boardwalk">Boardwalk</option>
+      </select>
+    </label>
+    <label>Grade
+      <select id="gradeSel">
+        <option value="day">DAY · Golden Hour</option>
+        <option value="night">NIGHT · Neon</option>
+      </select>
+    </label>
+    <label class="check"><input type="checkbox" id="wantedChk" checked> WANTED strip</label>
+  </div>
+</header>
+<main class="workspace">
+  <section class="stage-wrap">
+    <canvas id="stage" width="1280" height="720"></canvas>
+    <p class="stage-note">Live preview — the same drawing the PNG export writes.</p>
+  </section>
+  <aside class="panel">
+    <h2>Cover text</h2>
+    <label>Title <input id="titleIn" type="text" value="PALMHEIST" maxlength="12"></label>
+    <label>Script line <input id="scriptIn" type="text" value="one last score" maxlength="24"></label>
+    <label>Quote <input id="quoteIn" type="text" value="A SUNSET WORTH STEALING" maxlength="48"></label>
+    <label>Paper <input id="paperIn" type="text" value="THE LEONIDA LEDGER" maxlength="32"></label>
+    <label>Tagline <input id="tagIn" type="text" value="SIX CREW · ONE LAST JOB" maxlength="40"></label>
+    <h2>Panels</h2>
+    <label>Panel
+      <select id="panelSel">
+        <option value="hero">Hero — Ringleader + Wheelman</option>
+        <option value="lookout">The Lookout</option>
+        <option value="insider">The Insider</option>
+        <option value="heli">The Pilot</option>
+        <option value="locksmith">The Locksmith</option>
+        <option value="car">Midnight Run — car</option>
+        <option value="boat">Harbour Lights — boat</option>
+      </select>
+    </label>
+    <div class="row">
+      <button id="uploadBtn" type="button">Upload photo</button>
+      <input id="uploadIn" type="file" accept="image/*" hidden>
+      <button id="resetPhotoBtn" type="button">Reset photo</button>
+    </div>
+    <label>Zoom <input id="scaleIn" type="range" min="1" max="2.2" step="0.01" value="1"><span id="scaleVal">1.00</span></label>
+    <label>Shift X <input id="dxIn" type="range" min="-0.4" max="0.4" step="0.01" value="0"><span id="dxVal">0.00</span></label>
+    <label>Shift Y <input id="dyIn" type="range" min="-0.4" max="0.4" step="0.01" value="0"><span id="dyVal">0.00</span></label>
+    <h2>Export PNG</h2>
+    <div class="row">
+      <button id="expLand" type="button">Landscape 1280×720</button>
+      <button id="expSquare" type="button">Square 1080×1080</button>
+      <button id="expPort" type="button">Portrait 1024×1280</button>
+    </div>
+    <p class="hint">Tip: load your own photo into any panel, then export. Everything runs offline in this page.</p>
+  </aside>
+</main>
+<script src="src/cover.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>
